@@ -1,13 +1,10 @@
 import "./App.css";
-import SearchBar from "./components/SearchBar";
+import WeatherApp from "./components/WeatherApp";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Weather App</h1>
-        <SearchBar />
-      </header>
+      <WeatherApp></WeatherApp>
     </div>
   );
 }
