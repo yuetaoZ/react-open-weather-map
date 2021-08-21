@@ -5,16 +5,20 @@ import HourlyForecast from "./HourlyForecast";
 import EightDayForecast from "./EightDayForecast";
 import styled from "styled-components";
 
-const Container = styled.div`
+const StyledHeader = styled.header`
+  text-align: center;
+`;
+
+const StyledWeatherApp = styled.div`
   width: 600px;
 `;
 
 const WeatherApp = () => {
   return (
-    <Container>
-      <header>
+    <StyledWeatherApp>
+      <StyledHeader>
         <h1>Weather App</h1>
-      </header>
+      </StyledHeader>
       <SearchBar />
       <br />
       <WeatherCard />
@@ -22,7 +26,7 @@ const WeatherApp = () => {
       <HourlyForecast />
       <br />
       <EightDayForecast />
-    </Container>
+    </StyledWeatherApp>
   );
 };
 
