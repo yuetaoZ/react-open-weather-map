@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import WeatherCard from "./WeatherCard";
 import HourlyForecast from "./HourlyForecast";
@@ -14,14 +14,20 @@ const StyledWeatherApp = styled.div`
 `;
 
 const WeatherApp = () => {
+  const [city, setCity] = useState("");
+
+  const handleSearchCity = (city) => {
+    setCity(city);
+  };
+
   return (
     <StyledWeatherApp>
       <StyledHeader>
         <h1>Weather App</h1>
       </StyledHeader>
-      <SearchBar />
+      <SearchBar onSearch={handleSearchCity} />
       <br />
-      <WeatherCard />
+      <WeatherCard city={city} />
       <br />
       <HourlyForecast />
       <br />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -22,11 +22,17 @@ const SearchBarContainer = styled.div`
   padding: 16px;
 `;
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+  const [value, setValue] = useState("");
+
   return (
     <SearchBarContainer>
-      <Input placeholder="Search city"></Input>
-      <Button>Search</Button>
+      <Input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Search city"
+      />
+      <Button onClick={() => props.onSearch(value)}>Search</Button>
     </SearchBarContainer>
   );
 };
