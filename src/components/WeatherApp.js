@@ -31,7 +31,7 @@ const WeatherApp = () => {
       <br />
       <HourlyForecast city={city} />
       <br />
-      <EightDayForecast />
+      <EightDayForecast city={city} />
     </StyledWeatherApp>
   );
 };
