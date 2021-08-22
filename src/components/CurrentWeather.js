@@ -35,7 +35,6 @@ const WeatherCard = ({ city }) => {
       return;
     }
     getCurrentWeather(city).then((resp) => {
-      console.log(`get resp:`, resp);
       setData(resp.data);
     });
   }, [city]);
@@ -55,13 +54,13 @@ const WeatherCard = ({ city }) => {
             ></img>
           </div>
           <StyledTempText>
-            <span>{KelvinToCelsius(data.main.temp)}°C</span>
+            <span>{Math.round(KelvinToCelsius(data.main.temp))}°C</span>
           </StyledTempText>
         </StyledTemperature>
         <div>
           <p>
             <strong className="temp-feel">
-              Feels like {KelvinToCelsius(data.main.feels_like)}°C.{" "}
+              Feels like {Math.round(KelvinToCelsius(data.main.feels_like))}°C.{" "}
               {data.weather[0].main}
             </strong>
           </p>
