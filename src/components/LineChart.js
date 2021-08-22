@@ -1,5 +1,5 @@
 import React from "react";
-import { Chart, Line } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 const LineChart = (props) => {
   const lab = props.hourlyData.map((data) => data.dt);
