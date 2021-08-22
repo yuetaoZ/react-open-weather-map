@@ -20,6 +20,7 @@ const HourlyForecast = ({ city }) => {
               return {
                 dt: moment.unix(data.dt).format("hh a"),
                 temp: KelvinToCelsius(data.temp),
+                humidity: data.humidity,
               };
             });
           })
