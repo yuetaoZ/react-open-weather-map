@@ -34,9 +34,13 @@ const WeatherCard = ({ city }) => {
     if (!city) {
       return;
     }
-    getCurrentWeather(city).then((resp) => {
-      setData(resp.data);
-    });
+    getCurrentWeather(city)
+      .then((resp) => {
+        setData(resp.data);
+      })
+      .catch((error) => {
+        console.log(`error`, error);
+      });
   }, [city]);
 
   return (

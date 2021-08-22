@@ -14,13 +14,25 @@ export const getGeoCoding = (city) => {
   });
 };
 
-export const getHourlyDataByGeoCoding = (lat, lon) => {
+export const getHourlyWeather = (lat, lon) => {
   const endpoint = `https://api.openweathermap.org/data/2.5/onecall`;
   return axios.get(endpoint, {
     params: {
       lat: lat,
       lon: lon,
       exclude: "current,minutely,daily,alerts",
+      appid: API_KEY,
+    },
+  });
+};
+
+export const getEightDayWeather = (lat, lon) => {
+  const endpoint = `https://api.openweathermap.org/data/2.5/onecall`;
+  return axios.get(endpoint, {
+    params: {
+      lat: lat,
+      lon: lon,
+      exclude: "current,minutely,hourly,alerts",
       appid: API_KEY,
     },
   });

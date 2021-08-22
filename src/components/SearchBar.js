@@ -30,6 +30,11 @@ const SearchBar = (props) => {
       <Input
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            props.onSearch(value);
+          }
+        }}
         placeholder="Search city"
       />
       <Button onClick={() => props.onSearch(value)}>Search</Button>

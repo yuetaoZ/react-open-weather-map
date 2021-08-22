@@ -24,7 +24,11 @@ const HourlyForecast = ({ city }) => {
             });
           })
           .then((hourlyData) => setHourlyData(hourlyData.slice(0, 24)))
-      );
+          .catch((error) => console.log(`error`, error))
+      )
+      .catch((error) => {
+        console.log(`error`, error);
+      });
   }, [city]);
 
   return (
