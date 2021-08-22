@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
-import WeatherCard from "./WeatherCard";
+import CurrentWeather from "./CurrentWeather";
 import HourlyForecast from "./HourlyForecast";
 import EightDayForecast from "./EightDayForecast";
 import styled from "styled-components";
@@ -14,7 +14,7 @@ const StyledWeatherApp = styled.div`
 `;
 
 const WeatherApp = () => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Chicago");
 
   const handleSearchCity = (city) => {
     setCity(city);
@@ -27,7 +27,7 @@ const WeatherApp = () => {
       </StyledHeader>
       <SearchBar onSearch={handleSearchCity} />
       <br />
-      <WeatherCard city={city} />
+      <CurrentWeather city={city} />
       <br />
       <HourlyForecast />
       <br />
