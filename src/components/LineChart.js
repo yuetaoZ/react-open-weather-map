@@ -15,7 +15,6 @@ const LineChart = (props) => {
         fill: false,
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(54, 162, 235, 0.2)",
       },
       {
         label: "Humidity",
